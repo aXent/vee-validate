@@ -542,9 +542,10 @@ var required_if$1 = (function (value, _ref) {
         field = document.querySelector('input[name=\'' + targetField + '\']:checked');
     }
 
-    // No field, validation fails.
+    // No field, validation succeeds.
+    // field doesn't have the desired targetValue -> no validation applies
     if (!field) {
-        return false;
+        return true;
     }
 
     // No validation applies.
@@ -1692,7 +1693,7 @@ var Validator = function () {
                     field = document.querySelector('input[name=\'' + targetField + '\']:checked');
                 }
 
-                if (field && field.value != targetValue) {
+                if (!field || field && field.value != targetValue) {
                     return true;
                 }
             }

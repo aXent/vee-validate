@@ -336,7 +336,7 @@ export default class Validator
                 field = document.querySelector(`input[name='${targetField}']:checked`);
             }
 
-            if (field && field.value != targetValue) {
+            if (! field || (field && field.value != targetValue)) {
                 return true;
             }
         }

@@ -5,9 +5,10 @@ export default (value, [targetField, targetValue]) => {
         field = document.querySelector(`input[name='${targetField}']:checked`);
     }
 
-    // No field, validation fails.
+    // No field, validation succeeds.
+    // field doesn't have the desired targetValue -> no validation applies
     if (! field) {
-        return false;
+        return true;
     }
 
     // No validation applies.

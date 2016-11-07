@@ -23,6 +23,7 @@ export default {
     numeric: (field) => `${field} mag alleen nummers bevatten`,
     regex: (field) => `${field} formaat is ongeldig.`,
     required: (field) => `${field} is verplicht.`,
+    required_if: (field, [targetField, targetValue]) => `${field} is verplicht als de waarde van ${targetField} ${targetValue} is`,
     size: (field, [size]) => `${field} moet minstens ${size} KB groot zijn.`,
     url: (field) => `${field} is geen geldige URL.`
 };
